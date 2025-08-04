@@ -1,6 +1,6 @@
 .env 
 
-vev/
+venv/
 
 __pycache__/
 *.pyc

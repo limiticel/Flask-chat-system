@@ -43,7 +43,10 @@ class DBHandler:
         Returns:
             dict: Registro encontrado ou None se não houver. 
         """
+
+       
         try:
+           
             connection = self.get_connection()
             cursor = connection.cursor()
             cursor.execute(f"SELECT * FROM {table_name} WHERE user_name = %s", (args['field_name'],))
@@ -51,7 +54,8 @@ class DBHandler:
             cursor.close()
         
         except Exception as error:
-            log_set.error(f"{error}")
+            print("erro", error)
+            log_set.error(f"Erro: {error}")
 
         return data
     

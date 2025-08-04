@@ -1,5 +1,8 @@
 import os
+from dotenv import load_dotenv
 
+
+load_dotenv()
 # Class de configuração principal da aplicação Flask
 class Config:
     # Chave secreta para proteger sessões e cookies (importante em produção)
@@ -15,16 +18,16 @@ class Config:
 # Classe de configuração do banco de dados MySQL
 class DatabaseConfig:
     # Endereço do host do MySQL
-    MYSQL_HOST = "localhost"
+    MYSQL_HOST = os.environ.get("MYSQL_HOST")
 
     # Nome de usuário do banco de dados
-    MYSQL_USER = "root"
+    MYSQL_USER = os.environ.get("MYSQL_USER")
 
     # Senha do usuário do banco de dados.
     MYSQL_PASSWORD = os.environ.get("MYSQL_PASSWORD")
 
     # Nome do banco de dados a ser utilizado
-    MYSQL_DB = "chatdb"
+    MYSQL_DB = os.environ.get("MYSQLDB")
 
     # Tipo de cursor usado para retornar os resultados como dicionários.
     MYSQL_CURSORCLASS = "DictCursor"

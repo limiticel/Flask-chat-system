@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 <body>
-    <h2><a href="/"> <i class="fas fa-arrow-left"></i> </a>Dashboard - {{ session["user_name"] }}</h2>
+    <h2><a href="/"> <i class="fas fa-arrow-left"></i> </a>Dashboard - {{ session.get("user_name") }}</h2>
 
     <div class="dashboard-container">
         <input type="text" id="search" placeholder="Buscar usuários...">
