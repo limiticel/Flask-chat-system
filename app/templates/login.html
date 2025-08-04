@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.svg') }}" type="image/svg+xml">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/" method="POST">
+            <input type="text" name="username" placeholder="Usuário" required />
+            <input type="password" name="password" placeholder="Senha" required />
+            <button type="submit">Entrar</button>
+        </form>
+        <p class="register-link">Não tem uma conta? <a href="/register">Cadastre-se aqui</a></p>
+        <footer style="text-align:center; font-size:12px; color:#888; margin-top:10px;">
+            <p>Este chat é apenas para demonstração. Não utilize para fins pessoais ou sensíveis.</p>
+        </footer>
+    </div>
+    
+</body>
+</html>

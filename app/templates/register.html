@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.svg') }}" type="image/svg+xml">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Criar Conta</h2>
+        <form action="/register" method="POST">
+            <input type="text" name="username" placeholder="Usuário" required />
+            <input type="password" name="password" placeholder="Senha" required />
+            <input type="password" name="verification" placeholder="Confirmar senha" required />
+            <button type="submit">Registrar</button>
+        </form>
+        <p class="login-link">Já tem conta? <a href="/">Fazer login</a></p>
+        <footer style="text-align:center; font-size:12px; color:#888; margin-top:10px;">
+            <p>Este chat é apenas para demonstração. Não utilize para fins pessoais ou sensíveis.</p>
+        </footer>
+    </div>
+   
+</body>
+</html>

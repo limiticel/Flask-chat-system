@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link rel="icon" href="{{ url_for('static', filename='images/favicon.svg') }}" type="image/svg+xml">
+    <title>Chat Rápido com {{ recipient }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
+</head>
+<body>
+    <h2> <a href="/dashboard"> <i class="fas fa-arrow-left"></i> </a> Chat Rápido com {{ recipient }}</h2>
+
+    <div id="chat" data-currentuser="{{ session['user_name'] }}" data-recipient="{{ recipient }}">
+        <ul id="messages"></ul>
+        <div id="input-area">
+            <input type="text" id="message" placeholder="Digite sua mensagem..." autocomplete="off" />
+            <button id="sendMessage" >Enviar</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/private_chat.js') }}"></script>
+    <script>
+        const currentuser = "{{ session['user_name'] }}";
+        const recipient = "{{ recipient }}";
+    </script>
+    <footer style="text-align:center; font-size:12px; color:#888; margin-top:10px;">
+        <p>Este chat é apenas para demonstração. Não utilize para fins pessoais ou sensíveis.</p>
+    </footer>
+</body>
+</html>
